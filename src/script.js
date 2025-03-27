@@ -306,6 +306,10 @@ document.addEventListener("DOMContentLoaded", function () {
             button.addEventListener('click', smoothScroll);
         });
 
+        document.querySelectorAll('a[href="#home"]').forEach(item => {
+            item.addEventListener('click', smoothScroll);
+        });
+
         const popup = document.querySelector('.popup__overlay');
         const closePopup = document.getElementById('closePopup');
 
