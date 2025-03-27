@@ -4440,10 +4440,16 @@ Swiper.use([Resize, Observer]);
 ;// ./src/script.js
 
 
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 
 
 
 var serviceSwiper;
+var loaderOverlay = document.querySelector('.loader-overlay');
+loaderOverlay.style.display = 'flex';
 function initServiceSwiper() {
   if (window.innerWidth > 810) {
     if (!serviceSwiper) {
@@ -4530,7 +4536,8 @@ document.addEventListener("DOMContentLoaded", function () {
       footerSubmitButton: "submit",
       popupTitle: "Thank You for Your Booking!",
       popupText: "We appreciate your request.<br class=\"hide-on-mobile\"> Our team will contact you within 15 minutes.",
-      popupButton: "got it"
+      popupButton: "got it",
+      subscriptionSuccess: "Thank you for subscribing!"
     },
     sk: {
       menuItemHome: "Domov",
@@ -4597,7 +4604,8 @@ document.addEventListener("DOMContentLoaded", function () {
       footerSubmitButton: "Poslať",
       popupTitle: "Ďakujeme za Vašu rezerváciu!",
       popupText: "V\xE1\u017Eime si va\u0161u po\u017Eiadavku.<br class=\"hide-on-mobile\"> N\xE1\u0161 t\xEDm v\xE1s bude kontaktova\u0165 do 15 min\xFAt.",
-      popupButton: "Rozumiem"
+      popupButton: "Rozumiem",
+      subscriptionSuccess: "Ďakujeme za prihlásenie na odber!"
     },
     ge: {
       menuItemHome: "Startseite",
@@ -4664,7 +4672,8 @@ document.addEventListener("DOMContentLoaded", function () {
       footerSubmitButton: "Anmelden",
       popupTitle: "Vielen Dank für Ihre Buchung!",
       popupText: "Wir danken Ihnen f\xFCr Ihre Anfrage.<br class=\"hide-on-mobile\"> Unser Team wird Sie innerhalb von 15 Minuten kontaktieren.",
-      popupButton: "Verstanden"
+      popupButton: "Verstanden",
+      subscriptionSuccess: "Vielen Dank für Ihr Abonnement!"
     }
   };
   var validationTranslations = {
@@ -4684,6 +4693,25 @@ document.addEventListener("DOMContentLoaded", function () {
       phone: 'Bitte geben Sie eine gültige Telefonnummer ein'
     }
   };
+  function smoothScroll(event) {
+    event.preventDefault();
+    var targetId = this.getAttribute('href');
+    var targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
+  document.querySelectorAll('.menu__item').forEach(function (item) {
+    item.addEventListener('click', smoothScroll);
+  });
+  document.querySelectorAll('a[href="#order"]').forEach(function (button) {
+    button.addEventListener('click', smoothScroll);
+  });
+  var popup = document.querySelector('.popup__overlay');
+  var closePopup = document.getElementById('closePopup');
   function getCurrentLanguage() {
     return document.documentElement.lang || 'en';
   }
@@ -4708,8 +4736,6 @@ document.addEventListener("DOMContentLoaded", function () {
     input.classList.add('error');
     if (formBlockLabel) {
       updateLabelColor(input, formBlockLabel);
-
-      // Обработчик клика для динамического изменения цвета
       var handleInputClick = function handleInputClick() {
         return updateLabelColor(input, formBlockLabel);
       };
@@ -4735,20 +4761,14 @@ document.addEventListener("DOMContentLoaded", function () {
     var value = input.value.trim();
     var lang = getCurrentLanguage();
     var translations = validationTranslations[lang];
-
-    // Проверка на обязательность
     if (input.required && !value) {
       showError(input, translations.required);
       return false;
     }
-
-    // Специфическая валидация для email
     if (input.type === 'email' && value && !validateEmail(value)) {
       showError(input, translations.email);
       return false;
     }
-
-    // Специфическая валидация для телефона
     if (input.id.includes('phone') && value && !validatePhone(value)) {
       showError(input, translations.phone);
       return false;
@@ -4756,80 +4776,193 @@ document.addEventListener("DOMContentLoaded", function () {
     removeError(input);
     return true;
   }
-
-  // Инициализация валидации форм
+  function isFormValid() {
+    var nameValid = document.getElementById('booking__name-input').value.trim() !== '';
+    var emailValid = validateEmail(document.getElementById('booking__email-input').value.trim());
+    var phoneValid = validatePhone(document.getElementById('booking__phone-input').value.trim());
+    return nameValid && emailValid && phoneValid;
+  }
+  var isSubmitting = false;
   function initFormsValidation() {
-    // Форма бронирования
     var bookingForm = document.querySelector('.booking__form form');
+    var bookingBtn = document.getElementById('book-cleaning');
     if (bookingForm) {
       var bookingInputs = bookingForm.querySelectorAll('input');
-
-      // Установка required атрибутов
       bookingForm.querySelector('#booking__name-input').required = true;
       bookingForm.querySelector('#booking__phone-input').required = true;
       bookingForm.querySelector('#booking__email-input').required = true;
       bookingInputs.forEach(function (input) {
-        // Проверка при потере фокуса
         input.addEventListener('blur', function () {
           validateField(input);
         });
-
-        // Удаление ошибки при вводе
         input.addEventListener('input', function () {
           if (input.classList.contains('error')) {
             validateField(input);
           }
+          bookingBtn.disabled = !isFormValid();
         });
       });
-      bookingInputs.forEach(function (input) {
-        input.addEventListener('input', function () {
-          if (input.classList.contains('error')) {
-            validateField(input); // Проверяем валидность при каждом изменении
-          }
-        });
-      });
-      bookingForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var isValid = true;
-        bookingInputs.forEach(function (input) {
-          if (!validateField(input)) {
-            isValid = false;
-          }
-        });
-        if (isValid) {
-          // Отправка формы
-          console.log('Booking form is valid, submitting...');
-          // Здесь код для отправки формы
-        }
-      });
+      if (isSubmitting) return;
+      isSubmitting = true;
+      bookingForm.addEventListener('submit', /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
+          var isValid, formData, response;
+          return _regeneratorRuntime().wrap(function _callee$(_context) {
+            while (1) switch (_context.prev = _context.next) {
+              case 0:
+                e.preventDefault();
+                bookingBtn.disabled = true;
+                isValid = true;
+                bookingInputs.forEach(function (input) {
+                  if (!validateField(input)) {
+                    isValid = false;
+                  }
+                });
+                if (!isValid) {
+                  _context.next = 31;
+                  break;
+                }
+                formData = new FormData(bookingForm);
+                loaderOverlay.style.display = 'flex';
+                loaderOverlay.style.opacity = '1';
+                loaderOverlay.style.visibility = 'visible';
+                _context.prev = 9;
+                _context.next = 12;
+                return fetch(bookingForm.action, {
+                  method: 'POST',
+                  body: formData,
+                  headers: {
+                    'Accept': 'application/json'
+                  }
+                });
+              case 12:
+                response = _context.sent;
+                if (!response.ok) {
+                  _context.next = 18;
+                  break;
+                }
+                popup.style.display = 'flex';
+                bookingForm.reset();
+                _context.next = 19;
+                break;
+              case 18:
+                throw new Error('Form submission failed');
+              case 19:
+                _context.next = 24;
+                break;
+              case 21:
+                _context.prev = 21;
+                _context.t0 = _context["catch"](9);
+                alert('Error: Please try again later.');
+              case 24:
+                _context.prev = 24;
+                loaderOverlay.style.opacity = '0';
+                loaderOverlay.style.visibility = 'hidden';
+                setTimeout(function () {
+                  loaderOverlay.style.display = 'none';
+                }, 300);
+                isSubmitting = false;
+                bookingBtn.disabled = false;
+                return _context.finish(24);
+              case 31:
+              case "end":
+                return _context.stop();
+            }
+          }, _callee, null, [[9, 21, 24, 31]]);
+        }));
+        return function (_x) {
+          return _ref.apply(this, arguments);
+        };
+      }());
     }
-
-    // Форма подписки
-    var subscriptionForm = document.querySelector('.footer__subscription');
+    var subscriptionForm = document.getElementById('subscription-form');
     if (subscriptionForm) {
       var subscriptionInput = subscriptionForm.querySelector('input[type="email"]');
       var _submitButton = subscriptionForm.querySelector('.action__submit');
-      if (subscriptionInput) {
-        subscriptionInput.required = true;
-        subscriptionInput.addEventListener('blur', function () {
+      subscriptionInput.required = true;
+      subscriptionInput.addEventListener('blur', function () {
+        validateField(subscriptionInput);
+      });
+      subscriptionInput.addEventListener('input', function () {
+        if (subscriptionInput.classList.contains('error')) {
           validateField(subscriptionInput);
-        });
-        subscriptionInput.addEventListener('input', function () {
-          if (subscriptionInput.classList.contains('error')) {
-            validateField(subscriptionInput);
-          }
-        });
-      }
-      if (_submitButton) {
-        _submitButton.addEventListener('click', function (e) {
-          e.preventDefault();
-          if (validateField(subscriptionInput)) {
-            // Отправка формы
-            console.log('Subscription form is valid, submitting...');
-            // Здесь код для отправки формы
-          }
-        });
-      }
+        }
+      });
+      subscriptionForm.addEventListener('submit', /*#__PURE__*/function () {
+        var _ref2 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
+          var formData, successMessage, currentLang, response, label;
+          return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+            while (1) switch (_context2.prev = _context2.next) {
+              case 0:
+                e.preventDefault();
+                if (!validateField(subscriptionInput)) {
+                  _context2.next = 35;
+                  break;
+                }
+                formData = new FormData(subscriptionForm);
+                successMessage = subscriptionForm.querySelector('.subscription-success-message');
+                currentLang = getCurrentLanguage();
+                loaderOverlay.style.display = 'flex';
+                loaderOverlay.style.opacity = '1';
+                loaderOverlay.style.visibility = 'visible';
+                _context2.prev = 8;
+                _context2.next = 11;
+                return fetch(subscriptionForm.action, {
+                  method: 'POST',
+                  body: formData,
+                  headers: {
+                    'Accept': 'application/json'
+                  }
+                });
+              case 11:
+                response = _context2.sent;
+                if (!response.ok) {
+                  _context2.next = 21;
+                  break;
+                }
+                subscriptionForm.reset();
+                successMessage.textContent = translations[currentLang].subscriptionSuccess;
+                successMessage.style.display = 'block';
+                label = subscriptionForm.querySelector('.label');
+                if (label) {
+                  label.style.top = '12px';
+                  label.style.color = '#A9ABB0';
+                }
+                setTimeout(function () {
+                  successMessage.style.display = 'none';
+                }, 8000);
+                _context2.next = 22;
+                break;
+              case 21:
+                throw new Error('Form submission failed');
+              case 22:
+                _context2.next = 30;
+                break;
+              case 24:
+                _context2.prev = 24;
+                _context2.t0 = _context2["catch"](8);
+                console.error('Error:', _context2.t0);
+                successMessage.textContent = 'Error occurred, please try again';
+                successMessage.style.display = 'block';
+                successMessage.style.color = '#DE3333';
+              case 30:
+                _context2.prev = 30;
+                loaderOverlay.style.opacity = '0';
+                loaderOverlay.style.visibility = 'hidden';
+                setTimeout(function () {
+                  loaderOverlay.style.display = 'none';
+                }, 300);
+                return _context2.finish(30);
+              case 35:
+              case "end":
+                return _context2.stop();
+            }
+          }, _callee2, null, [[8, 24, 30, 35]]);
+        }));
+        return function (_x2) {
+          return _ref2.apply(this, arguments);
+        };
+      }());
     }
   }
   var burgerMenu = document.getElementById('burger-menu');
@@ -4950,7 +5083,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var swiperTexts = document.querySelectorAll('.reviews__item-text');
     var maxHeight = 159;
     swiperTexts.forEach(function (swiperText) {
-      var originalText = swiperText.textContent;
       var truncateText = function truncateText(element, maxHeight) {
         var text = element.textContent;
         while (element.scrollHeight > maxHeight && text.length > 0) {
@@ -4963,8 +5095,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
     handleServicesBlocks();
-
-    // Обновляем сообщения об ошибках при смене языка
     var errors = document.querySelectorAll('.error-message');
     var currentTranslations = validationTranslations[lang];
     errors.forEach(function (error) {
@@ -5150,14 +5280,6 @@ document.addEventListener("DOMContentLoaded", function () {
       container.appendChild(mainImage);
     }
   }
-  function validateForm() {
-    var nameInput = document.getElementById('booking__name-input');
-    var emailInput = document.getElementById('booking__email-input');
-    var phoneInput = document.getElementById('booking__phone-input');
-    var subscriptionEmailInput = document.getElementById('subscription__email-input');
-  }
-  var popup = document.querySelector('.popup__overlay');
-  var closePopup = document.getElementById('closePopup');
   closePopup.addEventListener('click', function () {
     return popup.style.display = 'none';
   });
@@ -5176,6 +5298,13 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   }
   window.addEventListener('load', function () {
+    setTimeout(function () {
+      loaderOverlay.style.opacity = '0';
+      loaderOverlay.style.visibility = 'hidden';
+      setTimeout(function () {
+        loaderOverlay.style.display = 'none';
+      }, 300);
+    }, 500);
     rearrangeElements();
     initServiceSwiper();
     handleServicesBlocks();
@@ -5186,6 +5315,9 @@ document.addEventListener("DOMContentLoaded", function () {
     initServiceSwiper();
     handleServicesBlocks();
   }));
+  window.addEventListener('error', function () {
+    loaderOverlay.style.display = 'none';
+  });
 });
 /******/ })()
 ;

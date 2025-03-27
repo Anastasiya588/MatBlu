@@ -8,7 +8,7 @@ module.exports = {
     entry: './src/script.js',
     output: {
         filename: 'script.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'docs'),
         clean: true,
     },
     module: {
@@ -56,7 +56,7 @@ module.exports = {
     ],
     devServer: {
         static: {
-            directory: path.join(__dirname, 'dist'),
+            directory: path.join(__dirname, 'docs'),
         },
         compress: true,
         port: 9000,
