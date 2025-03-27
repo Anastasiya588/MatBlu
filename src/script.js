@@ -283,26 +283,25 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         function smoothScroll(event) {
-            event.preventDefault(); // Отменяем стандартное поведение ссылки
+            event.preventDefault();
 
-            const targetId = this.getAttribute('href'); // Получаем ID целевой секции
-            const targetElement = document.querySelector(targetId); // Находим элемент по ID
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                // Прокручиваем страницу к целевому элементу
                 targetElement.scrollIntoView({
-                    behavior: 'smooth', // Плавный скролл
-                    block: 'start' // Прокрутка к началу элемента
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         }
 
-// Добавляем обработчики событий для элементов меню
+
         document.querySelectorAll('.menu__item').forEach(item => {
             item.addEventListener('click', smoothScroll);
         });
 
-// Добавляем обработчики событий для кнопок
+
         document.querySelectorAll('a[href="#order"]').forEach(button => {
             button.addEventListener('click', smoothScroll);
         });
@@ -341,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (formBlockLabel) {
                 updateLabelColor(input, formBlockLabel);
 
-                // Обработчик клика для динамического изменения цвета
+
                 const handleInputClick = () => updateLabelColor(input, formBlockLabel);
                 input.addEventListener('click', handleInputClick);
             }
@@ -370,19 +369,19 @@ document.addEventListener("DOMContentLoaded", function () {
             const lang = getCurrentLanguage();
             const translations = validationTranslations[lang];
 
-            // Проверка на обязательность
+
             if (input.required && !value) {
                 showError(input, translations.required);
                 return false;
             }
 
-            // Специфическая валидация для email
+
             if (input.type === 'email' && value && !validateEmail(value)) {
                 showError(input, translations.email);
                 return false;
             }
 
-            // Специфическая валидация для телефона
+
             if (input.id.includes('phone') && value && !validatePhone(value)) {
                 showError(input, translations.phone);
                 return false;
@@ -401,27 +400,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let isSubmitting = false;
 
-        // Инициализация валидации форм
+
         function initFormsValidation() {
-            // Форма бронирования
+
             const bookingForm = document.querySelector('.booking__form form');
             const bookingBtn = document.getElementById('book-cleaning');
             if (bookingForm) {
                 const bookingInputs = bookingForm.querySelectorAll('input');
 
-                // Установка required атрибутов
+
                 bookingForm.querySelector('#booking__name-input').required = true;
                 bookingForm.querySelector('#booking__phone-input').required = true;
                 bookingForm.querySelector('#booking__email-input').required = true;
 
 
                 bookingInputs.forEach(input => {
-                    // Проверка при потере фокуса
+
                     input.addEventListener('blur', function () {
                         validateField(input);
                     });
 
-                    // Удаление ошибки при вводе
+
                     input.addEventListener('input', function () {
                         if (input.classList.contains('error')) {
                             validateField(input);
@@ -481,7 +480,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
 
-            // Форма подписки
 
             const subscriptionForm = document.getElementById('subscription-form');
             if (subscriptionForm) {
@@ -721,7 +719,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             handleServicesBlocks();
 
-            // Обновляем сообщения об ошибках при смене языка
+
             const errors = document.querySelectorAll('.error-message');
             const currentTranslations = validationTranslations[lang];
 
@@ -983,7 +981,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 loaderOverlay.style.opacity = '0';
                 loaderOverlay.style.visibility = 'hidden';
 
-                // Удалить из DOM после завершения анимации
+
                 setTimeout(() => {
                     loaderOverlay.style.display = 'none';
                 }, 300);
