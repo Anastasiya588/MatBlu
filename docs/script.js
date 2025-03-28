@@ -4710,6 +4710,9 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('a[href="#order"]').forEach(function (button) {
     button.addEventListener('click', smoothScroll);
   });
+  document.querySelectorAll('a[href="#home"]').forEach(function (item) {
+    item.addEventListener('click', smoothScroll);
+  });
   var popup = document.querySelector('.popup__overlay');
   var closePopup = document.getElementById('closePopup');
   function getCurrentLanguage() {
