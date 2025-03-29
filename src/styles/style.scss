@@ -221,11 +221,14 @@
 }
 
 .error-message {
+  position: absolute;
+  top: -15px;
+  left: 21px;
   color: #DE3333;
   font-size: 12px;
   margin-top: 5px;
-  margin-left: 5px;
   font-family: 'PoppinsRegular', sans-serif;
+
 }
 
 .header {
@@ -1225,9 +1228,6 @@
           }
 
           img {
-            /*  width: 100%;
-            height: 100%;
-            object-fit: cover;*/
             max-width: 980px;
             width: 100%;
             height: auto;
@@ -1807,6 +1807,7 @@
         border-radius: 20px;
         padding: 40px 20px;
         box-sizing: border-box;
+        transition: all 0.3s ease;
 
         @media (max-width: 1154px) {
           width: 550px;
@@ -1852,11 +1853,13 @@
               @include input();
               width: 100%;
 
+              &:focus {
+                margin-top: 5px;
+              }
             }
 
             label {
               @include label();
-
               @media (max-width: 575px) {
                 font-size: 12px;
                 line-height: 18px;
@@ -2208,11 +2211,13 @@
 
     .subscription__info {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
+      transition: all 0.3s ease;
 
       @media (max-width: 1000px) {
         flex-direction: column;
+        align-items: center;
       }
 
       .info__description {
@@ -2300,6 +2305,7 @@
           background: transparent;
           border: 0;
           transition: all 0.3s ease;
+          margin-bottom: 0;
 
           &:hover {
             color: #4474E4;

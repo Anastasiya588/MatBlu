@@ -4476,7 +4476,7 @@ document.addEventListener("DOMContentLoaded", function () {
       menuItemBlog: "Blog",
       menuItemContact: "Contact",
       mainBlockMiniTab: "household and commercial  mattress cleaning",
-      mainBlockTitle: "<span class=\"blue-text\">The Way</span> <br class=\"hide-on-mobile\">To Allergy Free Mattress",
+      mainBlockTitle: "<span class=\"blue-text\">Your Way</span> <br class=\"hide-on-mobile\">To Allergy Free Mattress",
       mainBlockAddition: "Discover for yourself the revolutionary cleaning mattress machine that makes your sleep excellent and allergy free.",
       mainBlockButton: "book cleaning",
       serviceFirstTitle: "Mattress <br class=\"hide-on-mobile\"> dry cleaning.",
@@ -4524,13 +4524,13 @@ document.addEventListener("DOMContentLoaded", function () {
       bookingGuestHouses: "Guest Houses",
       bookingHotels: "Hotels",
       bookingPriceDescription: "Depending on size and quantity. Minimum order of 50 EUR required. Please contact us with details to obtain Your Allergy Free Mattress cleaning quote.",
-      footerMainTitle: "the way<br class=\"hide-on-mobile\"> to allergy free mattress",
+      footerMainTitle: "Your Way<br class=\"hide-on-mobile\"> to allergy free mattress",
       footerContactTitle: "contact us",
       footerHoursTitle: "hours",
       footerTextMondayToFriday: "Monday to Friday",
       footerTextWeekends: "Saturday & Sunday",
-      footerBookTitle: "book your order",
-      footerButton: "book order",
+      footerBookTitle: "Book Your Service",
+      footerButton: "Book Now",
       footerSubscriptionTitle: "Subscribe to our newsletter",
       footerSubscriptionDescription: "To always get news about sales <br class=\"hide-on-mobile\"> and any promotions",
       footerSubmitButton: "submit",
@@ -4593,8 +4593,8 @@ document.addEventListener("DOMContentLoaded", function () {
       bookingHotels: "Hotely",
       bookingPriceDescription: "Cena závisí od veľkosti a množstva čistených matracov a nábytku. Minimálna objednávka je 50 €. Kontaktujte nás kvôli podrobnostiam a získajte cenovú ponuku na čistenie matracov, ktoré zabezpečí čistejšie prostredie, najmä pre osoby s alergiami.",
       footerMainTitle: "Smerom <br class=\"hide-on-mobile\"> K Matracom Bez Alergi\xED",
-      footerContactTitle: "contact us",
-      footerHoursTitle: "hours",
+      footerContactTitle: "Kontakt",
+      footerHoursTitle: "Otvoracie hodiny",
       footerTextMondayToFriday: "Pondelok - Piatok",
       footerTextWeekends: "Sobota a Nedeľa",
       footerBookTitle: "Rezervovať Čistenie",
@@ -4612,7 +4612,7 @@ document.addEventListener("DOMContentLoaded", function () {
       menuItemBlog: "Blog",
       menuItemContact: "Kontakt",
       mainBlockMiniTab: "Haushalts und gewerbliche Matratzenreinigung",
-      mainBlockTitle: "<span class=\"blue-text\">Der Weg</span><br class=\"hide-on-mobile\"> zur allergiefreien Matratze",
+      mainBlockTitle: "<span class=\"blue-text\">Ihr Weg</span><br class=\"hide-on-mobile\"> zur allergiefreien Matratze",
       mainBlockAddition: "Entdecken Sie die revolutionäre Matratzenreinigungsmaschine, die für einen erholsamen und allergiefreien Schlaf sorgt.",
       mainBlockButton: "Reinigung buchen",
       serviceFirstTitle: "Matratzen-<br class=\"hide-on-mobile\">Trockenreinigung.",
@@ -4660,7 +4660,7 @@ document.addEventListener("DOMContentLoaded", function () {
       bookingGuestHouses: "Gästehäuser",
       bookingHotels: "Hotels",
       bookingPriceDescription: "Der Preis ist von der Größe and Menge abhaengig. Der Mindestbestellwert ist 50€. Bitte kontaktieren Sie uns, um ein individuelles allergiefreien Matratzreinigung Angebot zu erhalten.",
-      footerMainTitle: "Der Weg<br class=\"hide-on-mobile\"> zur allergiefreien Matratze",
+      footerMainTitle: "Ihr Weg<br class=\"hide-on-mobile\"> zur allergiefreien Matratze",
       footerContactTitle: "Kontaktieren Sie uns",
       footerHoursTitle: "Öffnungszeiten",
       footerTextMondayToFriday: "Montag bis Freitag",
@@ -4735,8 +4735,16 @@ document.addEventListener("DOMContentLoaded", function () {
       error.className = 'error-message';
       formBlock.appendChild(error);
     }
-    error.textContent = message;
+    var labelText = formBlockLabel ? formBlockLabel.textContent.trim() : '';
+    var colon = labelText.endsWith(':') ? '' : ':';
+    error.textContent = "".concat(labelText).concat(colon, " ").concat(message);
     input.classList.add('error');
+    input.style.marginTop = '10px';
+    input.style.marginBottom = '5px';
+    formBlockLabel.style.display = 'none';
+    if (input === emailSubscriptionInput) {
+      submitButton.style.top = '20px';
+    }
     if (formBlockLabel) {
       updateLabelColor(input, formBlockLabel);
       var handleInputClick = function handleInputClick() {
@@ -4756,6 +4764,9 @@ document.addEventListener("DOMContentLoaded", function () {
       error.remove();
     }
     input.classList.remove('error');
+    input.style.marginTop = '';
+    input.style.marginBottom = '';
+    submitButton.style.top = '';
     if (formBlockLabel) {
       formBlockLabel.style.color = input.classList.contains('error') ? '#DE3333' : '#4474E4';
     }
@@ -4763,7 +4774,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function validateField(input) {
     var value = input.value.trim();
     var lang = getCurrentLanguage();
-    var translations = validationTranslations[lang];
+    var translations = validationTranslations[lang] || validationTranslations['en'];
+    removeError(input);
     if (input.required && !value) {
       showError(input, translations.required);
       return false;
@@ -5041,6 +5053,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function changeLanguage(lang) {
     document.documentElement.classList.remove('lang-en', 'lang-sk', 'lang-ge');
     document.documentElement.classList.add("lang-".concat(lang));
+    document.documentElement.lang = lang;
     var elements = document.querySelectorAll('[data-translate]');
     elements.forEach(function (element) {
       var key = element.getAttribute('data-translate');
@@ -5099,17 +5112,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     handleServicesBlocks();
     var errors = document.querySelectorAll('.error-message');
-    var currentTranslations = validationTranslations[lang];
+    var currentTranslations = validationTranslations[lang] || validationTranslations['en'];
     errors.forEach(function (error) {
       var input = error.closest('.form__block, .info__action').querySelector('input');
-      if (input.required && !input.value.trim()) {
-        error.textContent = currentTranslations.required;
-      } else if (input.type === 'email' && input.value.trim() && !validateEmail(input.value.trim())) {
-        error.textContent = currentTranslations.email;
-      } else if (input.id.includes('phone') && input.value.trim() && !validatePhone(input.value.trim())) {
-        error.textContent = currentTranslations.phone;
+      var label = error.closest('.form__block, .info__action').querySelector('label');
+      if (input) {
+        var value = input.value.trim();
+        if (input.required && !value) {
+          error.textContent = currentTranslations.required;
+        } else if (input.type === 'email' && value && !validateEmail(value)) {
+          error.textContent = currentTranslations.email;
+        } else if (input.id.includes('phone') && value && !validatePhone(value)) {
+          error.textContent = currentTranslations.phone;
+        }
+        if (label) {
+          var colon = label.textContent.trim().endsWith(':') ? '' : ':';
+          error.textContent = "".concat(label.textContent.trim()).concat(colon, " ").concat(error.textContent);
+        }
       }
     });
+    initFormsValidation();
   }
   function handleServicesBlocks() {
     var blocks = document.querySelectorAll('.services__block');
@@ -5180,12 +5202,6 @@ document.addEventListener("DOMContentLoaded", function () {
     spaceBetween: 20,
     speed: 500
   });
-  document.getElementById('reviewsNextButton').addEventListener('click', function () {
-    swiper.slideNext();
-  });
-  document.getElementById('reviewsNextWhiteButton').addEventListener('click', function () {
-    swiper.slideNext();
-  });
   var accordion = document.querySelectorAll('.questions__item');
   if (accordion.length > 0) {
     accordion.forEach(function (item) {
@@ -5228,12 +5244,23 @@ document.addEventListener("DOMContentLoaded", function () {
     input.addEventListener('input', function () {
       if (input.value) {
         label.style.top = '-20px';
+        label.style.marginTop = '6px';
+        if (input === emailSubscriptionInput) {
+          emailSubscriptionLabel.style.top = '-25px';
+          submitButton.style.top = '10px';
+        }
         label.style.color = '#4474E4';
-        formBlock.style.marginTop = '30px';
+        if (window.innerWidth < 575) {
+          label.style.marginTop = '4px';
+          label.style.top = '-15px';
+          if (input === emailSubscriptionInput) {
+            emailSubscriptionLabel.style.top = '-22px';
+          }
+        }
       } else {
+        formBlock.style.marginTop = '';
         label.style.top = '12px';
         label.style.color = '#A9ABB0';
-        formBlock.style.marginTop = '';
       }
     });
     input.addEventListener('mouseenter', function () {
@@ -5241,8 +5268,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     input.addEventListener('click', function () {
       label.style.top = '-20px';
+      label.style.marginTop = '6px';
       label.style.color = '#4474E4';
-      formBlock.style.marginTop = '30px';
+      if (input === emailSubscriptionInput) {
+        emailSubscriptionLabel.style.top = '-25px';
+        submitButton.style.top = '10px';
+      }
+      if (window.innerWidth < 575) {
+        label.style.top = '-15px';
+        label.style.marginTop = '4px';
+        if (input === emailSubscriptionInput) {
+          emailSubscriptionLabel.style.top = '-22px';
+        }
+      }
     });
     input.addEventListener('mouseleave', function () {
       if (document.activeElement !== input && !input.value) {
@@ -5253,7 +5291,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!input.value) {
         label.style.color = '';
         label.style.top = '12px';
-        formBlock.style.marginTop = '';
       }
     });
   });

@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 menuItemBlog: "Blog",
                 menuItemContact: "Contact",
                 mainBlockMiniTab: "household and commercial  mattress cleaning",
-                mainBlockTitle: `<span class="blue-text">The Way</span> <br class="hide-on-mobile">To Allergy Free Mattress`,
+                mainBlockTitle: `<span class="blue-text">Your Way</span> <br class="hide-on-mobile">To Allergy Free Mattress`,
                 mainBlockAddition: "Discover for yourself the revolutionary cleaning mattress machine that makes your sleep excellent and allergy free.",
                 mainBlockButton: "book cleaning",
                 serviceFirstTitle: `Mattress <br class="hide-on-mobile"> dry cleaning.`,
@@ -99,13 +99,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 bookingGuestHouses: "Guest Houses",
                 bookingHotels: "Hotels",
                 bookingPriceDescription: "Depending on size and quantity. Minimum order of 50 EUR required. Please contact us with details to obtain Your Allergy Free Mattress cleaning quote.",
-                footerMainTitle: `the way<br class="hide-on-mobile"> to allergy free mattress`,
+                footerMainTitle: `Your Way<br class="hide-on-mobile"> to allergy free mattress`,
                 footerContactTitle: "contact us",
                 footerHoursTitle: "hours",
                 footerTextMondayToFriday: "Monday to Friday",
                 footerTextWeekends: "Saturday & Sunday",
-                footerBookTitle: "book your order",
-                footerButton: "book order",
+                footerBookTitle: "Book Your Service",
+                footerButton: "Book Now",
                 footerSubscriptionTitle: "Subscribe to our newsletter",
                 footerSubscriptionDescription: `To always get news about sales <br class="hide-on-mobile"> and any promotions`,
                 footerSubmitButton: "submit",
@@ -174,8 +174,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 bookingHotels: "Hotely",
                 bookingPriceDescription: "Cena závisí od veľkosti a množstva čistených matracov a nábytku. Minimálna objednávka je 50 €. Kontaktujte nás kvôli podrobnostiam a získajte cenovú ponuku na čistenie matracov, ktoré zabezpečí čistejšie prostredie, najmä pre osoby s alergiami.",
                 footerMainTitle: `Smerom <br class="hide-on-mobile"> K Matracom Bez Alergií`,
-                footerContactTitle: "contact us",
-                footerHoursTitle: "hours",
+                footerContactTitle: "Kontakt",
+                footerHoursTitle: "Otvoracie hodiny",
                 footerTextMondayToFriday: "Pondelok - Piatok",
                 footerTextWeekends: "Sobota a Nedeľa",
                 footerBookTitle: "Rezervovať Čistenie",
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 menuItemBlog: "Blog",
                 menuItemContact: "Kontakt",
                 mainBlockMiniTab: "Haushalts und gewerbliche Matratzenreinigung",
-                mainBlockTitle: `<span class="blue-text">Der Weg</span><br class="hide-on-mobile"> zur allergiefreien Matratze`,
+                mainBlockTitle: `<span class="blue-text">Ihr Weg</span><br class="hide-on-mobile"> zur allergiefreien Matratze`,
                 mainBlockAddition: "Entdecken Sie die revolutionäre Matratzenreinigungsmaschine, die für einen erholsamen und allergiefreien Schlaf sorgt.",
                 mainBlockButton: "Reinigung buchen",
                 serviceFirstTitle: `Matratzen-<br class="hide-on-mobile">Trockenreinigung.`,
@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 bookingGuestHouses: "Gästehäuser",
                 bookingHotels: "Hotels",
                 bookingPriceDescription: "Der Preis ist von der Größe and Menge abhaengig. Der Mindestbestellwert ist 50€. Bitte kontaktieren Sie uns, um ein individuelles allergiefreien Matratzreinigung Angebot zu erhalten.",
-                footerMainTitle: `Der Weg<br class="hide-on-mobile"> zur allergiefreien Matratze`,
+                footerMainTitle: `Ihr Weg<br class="hide-on-mobile"> zur allergiefreien Matratze`,
                 footerContactTitle: "Kontaktieren Sie uns",
                 footerHoursTitle: "Öffnungszeiten",
                 footerTextMondayToFriday: "Montag bis Freitag",
@@ -338,13 +338,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 formBlock.appendChild(error);
             }
 
-            error.textContent = message;
+            const labelText = formBlockLabel ? formBlockLabel.textContent.trim() : '';
+            const colon = labelText.endsWith(':') ? '' : ':';
+            error.textContent = `${labelText}${colon} ${message}`;
+
             input.classList.add('error');
+            input.style.marginTop = '10px';
+            input.style.marginBottom = '5px';
+            formBlockLabel.style.display = 'none';
+            if (input === emailSubscriptionInput) {
+                submitButton.style.top = '20px';
+            }
 
             if (formBlockLabel) {
                 updateLabelColor(input, formBlockLabel);
-
-
                 const handleInputClick = () => updateLabelColor(input, formBlockLabel);
                 input.addEventListener('click', handleInputClick);
             }
@@ -363,6 +370,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             input.classList.remove('error');
+            input.style.marginTop = '';
+            input.style.marginBottom = '';
+            submitButton.style.top = '';
             if (formBlockLabel) {
                 formBlockLabel.style.color = input.classList.contains('error') ? '#DE3333' : '#4474E4';
             }
@@ -371,8 +381,9 @@ document.addEventListener("DOMContentLoaded", function () {
         function validateField(input) {
             const value = input.value.trim();
             const lang = getCurrentLanguage();
-            const translations = validationTranslations[lang];
+            const translations = validationTranslations[lang] || validationTranslations['en'];
 
+            removeError(input);
 
             if (input.required && !value) {
                 showError(input, translations.required);
@@ -412,7 +423,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (bookingForm) {
                 const bookingInputs = bookingForm.querySelectorAll('input');
 
-
                 bookingForm.querySelector('#booking__name-input').required = true;
                 bookingForm.querySelector('#booking__phone-input').required = true;
                 bookingForm.querySelector('#booking__email-input').required = true;
@@ -423,7 +433,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     input.addEventListener('blur', function () {
                         validateField(input);
                     });
-
 
                     input.addEventListener('input', function () {
                         if (input.classList.contains('error')) {
@@ -650,6 +659,7 @@ document.addEventListener("DOMContentLoaded", function () {
         function changeLanguage(lang) {
             document.documentElement.classList.remove('lang-en', 'lang-sk', 'lang-ge');
             document.documentElement.classList.add(`lang-${lang}`);
+            document.documentElement.lang = lang;
 
             const elements = document.querySelectorAll('[data-translate]');
             elements.forEach(element => {
@@ -725,19 +735,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             const errors = document.querySelectorAll('.error-message');
-            const currentTranslations = validationTranslations[lang];
+            const currentTranslations = validationTranslations[lang] || validationTranslations['en'];
 
             errors.forEach(error => {
                 const input = error.closest('.form__block, .info__action').querySelector('input');
+                const label = error.closest('.form__block, .info__action').querySelector('label');
 
-                if (input.required && !input.value.trim()) {
-                    error.textContent = currentTranslations.required;
-                } else if (input.type === 'email' && input.value.trim() && !validateEmail(input.value.trim())) {
-                    error.textContent = currentTranslations.email;
-                } else if (input.id.includes('phone') && input.value.trim() && !validatePhone(input.value.trim())) {
-                    error.textContent = currentTranslations.phone;
+                if (input) {
+                    const value = input.value.trim();
+
+                    if (input.required && !value) {
+                        error.textContent = currentTranslations.required;
+                    } else if (input.type === 'email' && value && !validateEmail(value)) {
+                        error.textContent = currentTranslations.email;
+                    } else if (input.id.includes('phone') && value && !validatePhone(value)) {
+                        error.textContent = currentTranslations.phone;
+                    }
+
+
+                    if (label) {
+                        const colon = label.textContent.trim().endsWith(':') ? '' : ':';
+                        error.textContent = `${label.textContent.trim()}${colon} ${error.textContent}`;
+                    }
                 }
             });
+            initFormsValidation();
         }
 
 
@@ -762,7 +784,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     block.dataset.titleHeight = titleHeight;
                     block.dataset.padding = padding;
-
 
                     content.style.maxHeight = `${titleHeight + padding}px`;
                     description.style.opacity = '0';
@@ -833,15 +854,6 @@ document.addEventListener("DOMContentLoaded", function () {
             speed: 500,
         });
 
-        document.getElementById('reviewsNextButton').addEventListener('click', () => {
-            swiper.slideNext();
-        });
-
-
-        document.getElementById('reviewsNextWhiteButton').addEventListener('click', () => {
-            swiper.slideNext();
-        });
-
         const accordion = document.querySelectorAll('.questions__item');
 
         if (accordion.length > 0) {
@@ -896,12 +908,24 @@ document.addEventListener("DOMContentLoaded", function () {
             input.addEventListener('input', () => {
                 if (input.value) {
                     label.style.top = '-20px';
+                    label.style.marginTop = '6px';
+                    if (input === emailSubscriptionInput) {
+                        emailSubscriptionLabel.style.top = '-25px';
+                        submitButton.style.top = '10px';
+                    }
+
                     label.style.color = '#4474E4';
-                    formBlock.style.marginTop = '30px';
+                    if (window.innerWidth < 575) {
+                        label.style.marginTop = '4px';
+                        label.style.top = '-15px';
+                        if (input === emailSubscriptionInput) {
+                            emailSubscriptionLabel.style.top = '-22px';
+                        }
+                    }
                 } else {
+                    formBlock.style.marginTop = ''
                     label.style.top = '12px';
                     label.style.color = '#A9ABB0';
-                    formBlock.style.marginTop = '';
                 }
             });
 
@@ -911,8 +935,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
             input.addEventListener('click', () => {
                 label.style.top = '-20px';
+                label.style.marginTop = '6px';
                 label.style.color = '#4474E4';
-                formBlock.style.marginTop = '30px'
+                if (input === emailSubscriptionInput) {
+                    emailSubscriptionLabel.style.top = '-25px';
+                    submitButton.style.top = '10px';
+                }
+                if (window.innerWidth < 575) {
+                    label.style.top = '-15px';
+                    label.style.marginTop = '4px';
+                    if (input === emailSubscriptionInput) {
+                        emailSubscriptionLabel.style.top = '-22px';
+                    }
+                }
             });
 
             input.addEventListener('mouseleave', () => {
@@ -925,7 +960,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!input.value) {
                     label.style.color = '';
                     label.style.top = '12px';
-                    formBlock.style.marginTop = '';
                 }
             });
         })
