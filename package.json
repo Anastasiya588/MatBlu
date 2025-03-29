@@ -27,6 +27,7 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-pngquant": "^10.0.0",
     "imagemin-svgo": "^11.0.1",
+    "imagemin-webp": "^8.0.0",
     "mini-css-extract-plugin": "^2.9.2",
     "sass": "^1.86.0",
     "sass-loader": "^16.0.5",
@@ -43,5 +44,4 @@
     "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^10.1.5"
   }
-
 }
