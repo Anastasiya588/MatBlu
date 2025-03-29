@@ -394,7 +394,9 @@ document.addEventListener("DOMContentLoaded", function () {
             input.classList.remove('error');
             input.style.marginTop = '';
             input.style.marginBottom = '';
-            submitButton.style.top = '';
+            if (input === emailSubscriptionInput) {
+                submitButton.style.top = '';
+            }
             if (formBlockLabel) {
                 formBlockLabel.style.color = input.classList.contains('error') ? '#DE3333' : '#4474E4';
             }
@@ -904,8 +906,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (input.value) {
                     label.style.top = '-20px';
                     label.style.marginTop = '6px';
+
                     if (input === emailSubscriptionInput) {
                         emailSubscriptionLabel.style.top = '-25px';
+                    }
+
+                    if (input === emailSubscriptionInput && !input.classList.contains('error')) {
                         submitButton.style.top = '10px';
                     }
 
@@ -932,8 +938,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 label.style.top = '-20px';
                 label.style.marginTop = '6px';
                 label.style.color = '#4474E4';
+
                 if (input === emailSubscriptionInput) {
                     emailSubscriptionLabel.style.top = '-25px';
+                }
+
+                if (input === emailSubscriptionInput && !input.classList.contains('error')) {
                     submitButton.style.top = '10px';
                 }
                 if (window.innerWidth < 575) {
