@@ -8,6 +8,33 @@ let serviceSwiper;
 const loaderOverlay = document.querySelector('.loader-overlay');
 loaderOverlay.style.display = 'flex';
 
+const popup = document.querySelector('.popup__overlay');
+const closePopup = document.getElementById('closePopup');
+
+const burgerMenu = document.getElementById('burger-menu');
+const burgerMenuClose = document.getElementById('closeModal');
+const modalOverlay = document.querySelector('.modal-overlay');
+const modalItems = document.querySelectorAll('.modal-menu__header .menu__items li a');
+
+const head = document.querySelector('.header__languages-switcher .languages-switcher__head');
+const body = document.querySelector('.header__languages-switcher .languages-switcher__body');
+const languages = body?.querySelectorAll('.languages-switcher__language');
+
+const modalHead = document.querySelector('.modal__menu .languages-switcher__head');
+const modalBody = document.querySelector('.modal__menu .languages-switcher__body');
+const modalLanguages = modalBody?.querySelectorAll('.modal__menu .languages-switcher__language');
+
+const accordion = document.querySelectorAll('.questions__item');
+
+
+const submitButton = document.querySelector('.action__submit');
+const emailSubscriptionInput = document.querySelector('#subscription__email-input');
+const emailSubscriptionLabel = document.querySelector('.subscription__email-label');
+
+const inputs = document.querySelectorAll('.input');
+const labels = document.querySelectorAll('.label');
+
+
 function initServiceSwiper() {
     if (window.innerWidth > 810) {
         if (!serviceSwiper) {
@@ -296,11 +323,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-
         document.querySelectorAll('.menu__item').forEach(item => {
             item.addEventListener('click', smoothScroll);
         });
-
 
         document.querySelectorAll('a[href="#order"]').forEach(button => {
             button.addEventListener('click', smoothScroll);
@@ -309,9 +334,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('a[href="#home"]').forEach(item => {
             item.addEventListener('click', smoothScroll);
         });
-
-        const popup = document.querySelector('.popup__overlay');
-        const closePopup = document.getElementById('closePopup');
 
         function getCurrentLanguage() {
             return document.documentElement.lang || 'en';
@@ -414,8 +436,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         let isSubmitting = false;
-
-
         function initFormsValidation() {
 
             const bookingForm = document.querySelector('.booking__form form');
@@ -572,11 +592,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        const burgerMenu = document.getElementById('burger-menu');
-        const burgerMenuClose = document.getElementById('closeModal');
-        const modalOverlay = document.querySelector('.modal-overlay');
-        const modalItems = document.querySelectorAll('.modal-menu__header .menu__items li a');
-
         if (burgerMenu && modalOverlay) {
             burgerMenu.addEventListener('click', function (e) {
                 e.stopPropagation();
@@ -612,9 +627,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         }
-        const head = document.querySelector('.header__languages-switcher .languages-switcher__head');
-        const body = document.querySelector('.header__languages-switcher .languages-switcher__body');
-        const languages = body?.querySelectorAll('.languages-switcher__language');
 
         if (head && body) {
             head.addEventListener('click', function (e) {
@@ -622,9 +634,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 body.style.display = body.style.display === 'flex' ? 'none' : 'flex';
             });
         }
-        const modalHead = document.querySelector('.modal__menu .languages-switcher__head');
-        const modalBody = document.querySelector('.modal__menu .languages-switcher__body');
-        const modalLanguages = modalBody?.querySelectorAll('.modal__menu .languages-switcher__language');
 
         if (modalHead && modalBody) {
             modalHead.addEventListener('click', function (e) {
@@ -642,7 +651,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (modalBody) modalBody.style.display = 'none';
             });
         }
-
 
         if (languages) {
             languages.forEach(setupLanguageClickHandler);
@@ -762,7 +770,6 @@ document.addEventListener("DOMContentLoaded", function () {
             initFormsValidation();
         }
 
-
         function handleServicesBlocks() {
             const blocks = document.querySelectorAll('.services__block');
 
@@ -804,7 +811,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
         }
-
         function handleMouseEnter() {
             const content = this.querySelector('.block__content');
             const description = this.querySelector('.services__description');
@@ -824,7 +830,6 @@ document.addEventListener("DOMContentLoaded", function () {
             content.style.maxHeight = `${titleHeight + padding}px`;
             description.style.opacity = '0';
         }
-
 
         head.addEventListener('click', function (e) {
             e.stopPropagation();
@@ -854,7 +859,6 @@ document.addEventListener("DOMContentLoaded", function () {
             speed: 500,
         });
 
-        const accordion = document.querySelectorAll('.questions__item');
 
         if (accordion.length > 0) {
             accordion.forEach(item => {
@@ -877,15 +881,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         }
-
-
-        const submitButton = document.querySelector('.action__submit');
-        const emailSubscriptionInput = document.querySelector('#subscription__email-input');
-        const emailSubscriptionLabel = document.querySelector('.subscription__email-label');
-
-        const inputs = document.querySelectorAll('.input');
-        const labels = document.querySelectorAll('.label');
-
 
         inputs.forEach((input, index) => {
             const label = labels[index];
@@ -964,7 +959,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         })
 
-
         if (submitButton && emailSubscriptionInput && emailSubscriptionLabel) {
             submitButton.addEventListener('mouseenter', () => {
                 emailSubscriptionInput.classList.add('highlight-border');
@@ -999,7 +993,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-
         closePopup.addEventListener('click', () => {
             return popup.style.display = 'none'
         })
@@ -1029,11 +1022,13 @@ document.addEventListener("DOMContentLoaded", function () {
             handleServicesBlocks();
             initFormsValidation();
         });
+
         window.addEventListener('resize', debounce(() => {
             rearrangeElements();
             initServiceSwiper();
             handleServicesBlocks();
         }));
+
         window.addEventListener('error', () => {
             loaderOverlay.style.display = 'none';
         });
