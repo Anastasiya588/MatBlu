@@ -8,7 +8,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = {
     entry: './src/script.js',
     output: {
-        filename: 'script.js',
+        filename: 'script.min.js',
         path: path.resolve(__dirname, 'docs'),
         clean: true,
     },

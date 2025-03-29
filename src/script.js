@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 bookingPriceDescription: "Cena závisí od veľkosti a množstva čistených matracov a nábytku. Minimálna objednávka je 50 €. Kontaktujte nás kvôli podrobnostiam a získajte cenovú ponuku na čistenie matracov, ktoré zabezpečí čistejšie prostredie, najmä pre osoby s alergiami.",
                 footerMainTitle: `Smerom <br class="hide-on-mobile"> K Matracom Bez Alergií`,
                 footerContactTitle: "Kontakt",
-                footerHoursTitle: "Otvoracie hodiny",
+                footerHoursTitle: "Otvaracie hodiny",
                 footerTextMondayToFriday: "Pondelok - Piatok",
                 footerTextWeekends: "Sobota a Nedeľa",
                 footerBookTitle: "Rezervovať Čistenie",
