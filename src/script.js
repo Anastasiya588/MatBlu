@@ -65,11 +65,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 mainBlockTitle: `<span class="blue-text">Your Way</span> <br class="hide-on-mobile">To Allergy Free Mattress`,
                 mainBlockAddition: "Discover for yourself the revolutionary cleaning mattress machine that makes your sleep excellent and allergy free.",
                 mainBlockButton: "book cleaning",
-                serviceFirstTitle: `Mattress <br class="hide-on-mobile"> dry cleaning.`,
+                serviceFirstTitle: `Mattress <br class="hide-on-mobile"> dry cleaning`,
                 serviceFirstDescription: "Cleaning your mattress entails utilizing specialized cleaning techniques to eliminate dust mites, bacteria, mold, and other allergens. This can lead to a notable enhancement in indoor air quality and a reduction in allergy symptoms.",
-                serviceSecondTitle: `Mattress <br class="hide-on-mobile"> wet Cleaning.`,
+                serviceSecondTitle: `Mattress <br class="hide-on-mobile"> wet Cleaning`,
                 serviceSecondDescription: "We are using spray and extraction method with low foaming solution, if your mattress is heavily soiled, stained (pet stains, food, beverages, bodily fluids) or has odor issues. While using this method, drying times are longer (8 to 12 hours depending on air movement and indoor temperature).",
-                serviceThirdTitle: "Upholstery Cleaning.",
+                serviceThirdTitle: "Upholstery Cleaning",
                 serviceThirdDescription: "With our deep cleaning and fast drying fabric upholstery cleaning service your furniture will be cleaner, brighter and ready for you to enjoy again! Our dual cleaning process ensures that your upholstery is not only clean but also sanitized, promoting a healthier living or working environment.",
                 mitesTitle: `some facts<br class="hide-on-mobile"> about dust mites`,
                 mitesText: `<ol>
@@ -145,15 +145,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 menuItemHome: "Domov",
                 menuItemBlog: "Blog",
                 menuItemContact: "Kontakt",
-                mainBlockMiniTab: "Čistenie matracov pre domácnosti aubytovacie zariadenia",
+                mainBlockMiniTab: "Čistenie matracov pre domácnosti a ubytovacie zariadenia",
                 mainBlockTitle: `<span class="blue-text">Smerom</span> <br class="hide-on-mobile">K Matracom Bez Alergií`,
                 mainBlockAddition: "Objavte revolučné čistenie matracov, vďaka ktorému bude Váš spánok opäť ozdravujúci a nerušený prejavmi alergie.",
                 mainBlockButton: "Rezervovať",
-                serviceFirstTitle: `Suché <br class="hide-on-mobile"> čistenie matracov.`,
+                serviceFirstTitle: `Suché <br class="hide-on-mobile"> čistenie matracov`,
                 serviceFirstDescription: "Naše čistenie matracov využíva špeciálne techniky na odstránenie roztočov, baktérií, plesní a ďalších alergénov. Tento proces výrazne zlepšuje kvalitu vnútorného ovzdušia a pomáha zmierniť prejavy alergie.",
-                serviceSecondTitle: `Mokré <br class="hide-on-mobile"> čistenie matracov.`,
+                serviceSecondTitle: `Mokré <br class="hide-on-mobile"> čistenie matracov`,
                 serviceSecondDescription: "Ak je váš matrac silne znečistený a zafarbený (škvrny od domácich zvierat, jedlo, nápoje, telesné tekutiny) alebo máte problémy so zápachom, používame metódu sprejovania a extrakcie s roztokom s nízkou penivosťou. Pri použití tejto metódy je čas schnutia 8 až 12 hodín v závislosti od vetrania a vnútornej teploty.",
-                serviceThirdTitle: "Čistenie čalúneného nábytku.",
+                serviceThirdTitle: "Čistenie čalúneného nábytku",
                 serviceThirdDescription: "Naša služba hĺbkového a rýchloschnúceho čistenia textilného čalúnenia zanechá váš nábytok nielen čistejší a žiarivejší, ale aj hygienicky ošetrený. Vďaka dvojitému procesu čistenia odstránime nečistoty, baktérie a alergény, čím prispejeme k zdravšiemu prostrediu vo vašej domácnosti alebo pracovnom priestore.",
                 mitesTitle: `Tu sú fakty<br class="hide-on-mobile"> o prachových roztočoch`,
                 mitesText: `<ol>
@@ -182,13 +182,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 reviewsTitle: "Čo si o nás myslia zákazníci",
                 reviewsMoreButton: "Viac",
                 reviewsFirstItemName: "Marek",
-                reviewsFirstItemText: "Great service! After MatBlu's cleaning, our mattress looks brand new – no stains, odors, or dust. The process was quick and, most importantly, safe. Very satisfied with the result!",
+                reviewsFirstItemText: "Skvelá služba! Po čistení od MatBlu vyzerá naša matrac ako nová – bez škvŕn, zápachu a prachu. Proces bol rýchly a, čo je najdôležitejšie, bezpečný. S výsledkom sme veľmi spokojní!",
                 reviewsSecondItemName: "Ján",
-                reviewsSecondItemText: "Thanks to MatBlu for professional cleaning! All dust, bacteria, and odors are gone, and sleeping has become much more comfortable. The service is worth every penny – highly recommend!",
+                reviewsSecondItemText: "Ďakujeme MatBlu za profesionálne čistenie! Všetok prach, baktérie a zápach sú preč a spánok je oveľa pohodlnejší. Služba stojí za každé euro – vrelo odporúčam!",
                 reviewsThirdItemName: "Zuzana",
-                reviewsThirdItemText: "Cleanliness is a top priority for our hotel. MatBlu quickly and efficiently cleaned the mattresses without excess moisture, which is crucial for guest check-ins. We now work with them on a regular basis!",
+                reviewsThirdItemText: "Čistota je pre náš hotel najvyššou prioritou. MatBlu rýchlo a efektívne vyčistilo matrace bez nadmernej vlhkosti, čo je kľúčové pre ubytovanie hostí. Teraz s nimi spolupracujeme pravidelne!",
                 reviewsForthItemName: "Lenka",
-                reviewsForthItemText: "As an Airbnb host, I prioritize cleanliness and guest comfort. MatBlu did an excellent job cleaning the mattresses – no stains, no odors, and no long drying time. Now my apartments are always in perfect condition!",
+                reviewsForthItemText: "Ako hostiteľ Airbnb kladiem dôraz na čistotu a pohodlie hostí. MatBlu odviedli vynikajúcu prácu pri čistení matracov – žiadne škvrny, zápach a dlhé sušenie. Moje apartmány sú teraz vždy v dokonalom stave!",
                 bookingFormTitle: "Rezervovať",
                 bookingNameLabel: "Meno",
                 bookingPhoneLabel: "Telefón",
@@ -223,11 +223,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 mainBlockTitle: `<span class="blue-text">Ihr Weg</span><br class="hide-on-mobile"> zur allergiefreien Matratze`,
                 mainBlockAddition: "Entdecken Sie die revolutionäre Matratzenreinigungsmaschine, die für einen erholsamen und allergiefreien Schlaf sorgt.",
                 mainBlockButton: "Reinigung buchen",
-                serviceFirstTitle: `Matratzen-<br class="hide-on-mobile">Trockenreinigung.`,
+                serviceFirstTitle: `Matratzen-<br class="hide-on-mobile">Trockenreinigung`,
                 serviceFirstDescription: "Die Reinigung Ihrer Matratze umfasst spezielle Techniken zur Entfernung von Hausstaubmilben, Bakterien, Schimmel und anderen Allergenen. Dies kann die Luftqualität in Innenräumen spürbar verbessern und Allergiesymptome verringern.",
-                serviceSecondTitle: `Matratzen-<br class="hide-on-mobile">Nassreinigung.`,
+                serviceSecondTitle: `Matratzen-<br class="hide-on-mobile">Nassreinigung`,
                 serviceSecondDescription: "Bei starken Verschmutzungen oder Geruchsproblemen nutzen wir die Sprüh-Extraktionsmethode mit schaumarmem Reinigungsmittel. Die Trocknung dauert 8–12 Stunden, je nach Luftzirkulation und Raumtemperatur.",
-                serviceThirdTitle: "Čistenie čalúneného nábytku.",
+                serviceThirdTitle: "Polsterreinigung",
                 serviceThirdDescription: "Mit unserer Tiefenreinigung und schnelltrocknenden Polsterreinigung wird Ihre Einrichtung sauber, frischer und schnell wieder nutzbar. Unser zweistufiges Verfahren sorgt nicht nur für Sauberkeit, sondern auch für Hygiene – für ein gesünderes Wohn- oder Arbeitsumfeld.",
                 mitesTitle: `Einige Fakten <br class="hide-on-mobile"> über Hausstaubmilben`,
                 mitesText: `<ol>
@@ -323,6 +323,114 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
+        function changeLanguage(lang) {
+            document.documentElement.classList.remove('lang-en', 'lang-sk', 'lang-ge');
+            document.documentElement.classList.add(`lang-${lang}`);
+            document.documentElement.lang = lang;
+
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+
+            const textarea = document.getElementById('booking__textarea');
+
+            if (textarea && translations[lang] && translations[lang]['bookingTextarea']) {
+                textarea.setAttribute('placeholder', translations[lang]['bookingTextarea']);
+            }
+
+            function autoResizeTextarea(textarea) {
+                textarea.style.height = 'auto';
+                textarea.style.height = textarea.scrollHeight + 'px';
+            }
+
+            textarea.addEventListener('input', () => {
+                autoResizeTextarea(textarea);
+            });
+
+            autoResizeTextarea(textarea);
+
+            const heads = document.querySelectorAll('.languages-switcher__head');
+            const selectedLang = document.querySelector(`.languages-switcher__language[data-lang="${lang}"]`);
+
+            if (selectedLang) {
+                heads.forEach(head => {
+                    head.innerHTML = selectedLang.innerHTML;
+                    head.setAttribute('data-lang', lang);
+                });
+            }
+
+            const mitesContent = document.querySelector('.mites__content');
+            const mitesContentImage = document.querySelector('.mites__content-image');
+            const mitesContentText = document.querySelector('.mites__content-text');
+
+            mitesContentImage.style.top = '';
+            mitesContentText.style.bottom = '';
+            mitesContent.style.minHeight = `591px`;
+
+            mitesContentImage.classList.remove('lang-en', 'lang-ge', 'lang-sk');
+            mitesContentImage.classList.add(`lang-${lang}`);
+            if (lang === 'sk') {
+                mitesContent.style.minHeight = `${mitesContentText.offsetHeight}px`;
+                const halfMitesContentText = mitesContentText.offsetHeight / 2;
+                const difference = mitesContent.offsetHeight - mitesContentText.offsetHeight;
+
+                mitesContentImage.style.top = `${halfMitesContentText - 288}px`;
+                mitesContentText.style.bottom = `${difference}px`;
+            }
+
+            const swiperTexts = document.querySelectorAll('.reviews__item-text');
+            const maxHeight = 159;
+            swiperTexts.forEach(swiperText => {
+                const truncateText = (element, maxHeight) => {
+                    let text = element.textContent;
+                    while (element.scrollHeight > maxHeight && text.length > 0) {
+                        text = text.slice(0, -1);
+                        element.textContent = text + '...';
+                    }
+                };
+
+                if (swiperText.scrollHeight > maxHeight) {
+                    truncateText(swiperText, maxHeight);
+                }
+            })
+            handleServicesBlocks();
+
+
+            const errors = document.querySelectorAll('.error-message');
+            const currentTranslations = validationTranslations[lang] || validationTranslations['sk'];
+
+            errors.forEach(error => {
+                const input = error.closest('.form__block, .info__action').querySelector('input');
+                const label = error.closest('.form__block, .info__action').querySelector('label');
+
+                if (input) {
+                    const value = input.value.trim();
+
+                    if (input.required && !value) {
+                        error.textContent = currentTranslations.required;
+                    } else if (input.type === 'email' && value && !validateEmail(value)) {
+                        error.textContent = currentTranslations.email;
+                    } else if (input.id.includes('phone') && value && !validatePhone(value)) {
+                        error.textContent = currentTranslations.phone;
+                    }
+
+
+                    if (label) {
+                        const colon = label.textContent.trim().endsWith(':') ? '' : ':';
+                        error.textContent = `${label.textContent.trim()}${colon} ${error.textContent}`;
+                    }
+                }
+            });
+            initFormsValidation();
+        }
+
+        changeLanguage('sk');
+
         document.querySelectorAll('.menu__item').forEach(item => {
             item.addEventListener('click', smoothScroll);
         });
@@ -336,7 +444,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         function getCurrentLanguage() {
-            return document.documentElement.lang || 'en';
+            return document.documentElement.lang || 'sk';
         }
 
         function validateEmail(email) {
@@ -405,7 +513,7 @@ document.addEventListener("DOMContentLoaded", function () {
         function validateField(input) {
             const value = input.value.trim();
             const lang = getCurrentLanguage();
-            const translations = validationTranslations[lang] || validationTranslations['en'];
+            const translations = validationTranslations[lang] || validationTranslations['sk'];
 
             removeError(input);
 
@@ -438,6 +546,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         let isSubmitting = false;
+
         function initFormsValidation() {
 
             const bookingForm = document.querySelector('.booking__form form');
@@ -666,111 +775,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (modalBody) modalBody.style.display = 'none';
         });
 
-        function changeLanguage(lang) {
-            document.documentElement.classList.remove('lang-en', 'lang-sk', 'lang-ge');
-            document.documentElement.classList.add(`lang-${lang}`);
-            document.documentElement.lang = lang;
-
-            const elements = document.querySelectorAll('[data-translate]');
-            elements.forEach(element => {
-                const key = element.getAttribute('data-translate');
-                if (translations[lang] && translations[lang][key]) {
-                    element.innerHTML = translations[lang][key];
-                }
-            });
-
-
-            const textarea = document.getElementById('booking__textarea');
-
-            if (textarea && translations[lang] && translations[lang]['bookingTextarea']) {
-                textarea.setAttribute('placeholder', translations[lang]['bookingTextarea']);
-            }
-
-            function autoResizeTextarea(textarea) {
-                textarea.style.height = 'auto';
-                textarea.style.height = textarea.scrollHeight + 'px';
-            }
-
-            textarea.addEventListener('input', () => {
-                autoResizeTextarea(textarea);
-            });
-
-            autoResizeTextarea(textarea);
-
-            const heads = document.querySelectorAll('.languages-switcher__head');
-            const selectedLang = document.querySelector(`.languages-switcher__language[data-lang="${lang}"]`);
-
-            if (selectedLang) {
-                heads.forEach(head => {
-                    head.innerHTML = selectedLang.innerHTML;
-                    head.setAttribute('data-lang', lang);
-                });
-            }
-
-            const mitesContent = document.querySelector('.mites__content');
-            const mitesContentImage = document.querySelector('.mites__content-image');
-            const mitesContentText = document.querySelector('.mites__content-text');
-
-            mitesContentImage.style.top = '';
-            mitesContentText.style.bottom = '';
-            mitesContent.style.minHeight = `591px`;
-
-            mitesContentImage.classList.remove('lang-en', 'lang-ge', 'lang-sk');
-            mitesContentImage.classList.add(`lang-${lang}`);
-            if (lang === 'sk') {
-                mitesContent.style.minHeight = `${mitesContentText.offsetHeight}px`;
-                const halfMitesContentText = mitesContentText.offsetHeight / 2;
-                const difference = mitesContent.offsetHeight - mitesContentText.offsetHeight;
-
-                mitesContentImage.style.top = `${halfMitesContentText - 288}px`;
-                mitesContentText.style.bottom = `${difference}px`;
-            }
-
-            const swiperTexts = document.querySelectorAll('.reviews__item-text');
-            const maxHeight = 159;
-            swiperTexts.forEach(swiperText => {
-                const truncateText = (element, maxHeight) => {
-                    let text = element.textContent;
-                    while (element.scrollHeight > maxHeight && text.length > 0) {
-                        text = text.slice(0, -1);
-                        element.textContent = text + '...';
-                    }
-                };
-
-                if (swiperText.scrollHeight > maxHeight) {
-                    truncateText(swiperText, maxHeight);
-                }
-            })
-            handleServicesBlocks();
-
-
-            const errors = document.querySelectorAll('.error-message');
-            const currentTranslations = validationTranslations[lang] || validationTranslations['en'];
-
-            errors.forEach(error => {
-                const input = error.closest('.form__block, .info__action').querySelector('input');
-                const label = error.closest('.form__block, .info__action').querySelector('label');
-
-                if (input) {
-                    const value = input.value.trim();
-
-                    if (input.required && !value) {
-                        error.textContent = currentTranslations.required;
-                    } else if (input.type === 'email' && value && !validateEmail(value)) {
-                        error.textContent = currentTranslations.email;
-                    } else if (input.id.includes('phone') && value && !validatePhone(value)) {
-                        error.textContent = currentTranslations.phone;
-                    }
-
-
-                    if (label) {
-                        const colon = label.textContent.trim().endsWith(':') ? '' : ':';
-                        error.textContent = `${label.textContent.trim()}${colon} ${error.textContent}`;
-                    }
-                }
-            });
-            initFormsValidation();
-        }
 
         function handleServicesBlocks() {
             const blocks = document.querySelectorAll('.services__block');
@@ -813,6 +817,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
         }
+
         function handleMouseEnter() {
             const content = this.querySelector('.block__content');
             const description = this.querySelector('.services__description');
@@ -850,7 +855,6 @@ document.addEventListener("DOMContentLoaded", function () {
             body.style.display = 'none';
         });
 
-        changeLanguage('en');
 
         const swiper = new Swiper('.reviews__items', {
             direction: "horizontal",
