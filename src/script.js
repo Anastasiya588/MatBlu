@@ -374,7 +374,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             mitesContentImage.classList.remove('lang-en', 'lang-ge', 'lang-sk');
             mitesContentImage.classList.add(`lang-${lang}`);
-            if (lang === 'sk') {
+            if (lang === 'en') {
                 mitesContent.style.minHeight = `${mitesContentText.offsetHeight}px`;
                 const halfMitesContentText = mitesContentText.offsetHeight / 2;
                 const difference = mitesContent.offsetHeight - mitesContentText.offsetHeight;
@@ -402,7 +402,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             const errors = document.querySelectorAll('.error-message');
-            const currentTranslations = validationTranslations[lang] || validationTranslations['sk'];
+            const currentTranslations = validationTranslations[lang] || validationTranslations['en'];
 
             errors.forEach(error => {
                 const input = error.closest('.form__block, .info__action').querySelector('input');
@@ -429,7 +429,7 @@ document.addEventListener("DOMContentLoaded", function () {
             initFormsValidation();
         }
 
-        changeLanguage('sk');
+        changeLanguage('en');
 
         document.querySelectorAll('.menu__item').forEach(item => {
             item.addEventListener('click', smoothScroll);
@@ -444,7 +444,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         function getCurrentLanguage() {
-            return document.documentElement.lang || 'sk';
+            return document.documentElement.lang || 'en';
         }
 
         function validateEmail(email) {
@@ -513,7 +513,7 @@ document.addEventListener("DOMContentLoaded", function () {
         function validateField(input) {
             const value = input.value.trim();
             const lang = getCurrentLanguage();
-            const translations = validationTranslations[lang] || validationTranslations['sk'];
+            const translations = validationTranslations[lang] || validationTranslations['en'];
 
             removeError(input);
 
@@ -587,6 +587,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     });
 
                     if (isValid) {
+                        gtag('event', 'conversion', {
+                            'send_to': 'AW-16969983417/s9eTCJ6p17IaELnL9Zs_'
+                        });
+
+
                         const formData = new FormData(bookingForm);
                         loaderOverlay.style.display = 'flex';
                         loaderOverlay.style.opacity = '1';
