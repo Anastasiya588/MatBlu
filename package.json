@@ -42,6 +42,6 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-minimizer-webpack-plugin": "^7.0.2",
     "postcss-loader": "^8.1.1",
-    "postcss-preset-env": "^10.1.5"
+    "postcss-preset-env": "^10.1.6"
   }
 }
